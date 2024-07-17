@@ -2,76 +2,20 @@
 // Selecting Elements
 // /////////////////////////////////
 
-const mobileNavOpen = document.getElementById('mobile-nav-opener');
-const mobileNavClose = document.getElementById('mobile-nav-close');
-const contactButtons = document.querySelectorAll('.contact-button');
-const mobileNav = document.getElementById('mobile-navigation');
-const onLoadBlogs = document.querySelectorAll('.blog-onload');
-const loadMoreBtn = document.getElementById('load-more');
+const mobileNavOpenerBtn = document.querySelector('#mobile-nav-opener-btn');
+const mobileNavCloseBtn = document.querySelector('#mobile-nav-close-btn');
+const mainNav = document.querySelector('.navigation');
+const mobileNav = document.querySelector('.mobile-navigation');
 
 // /////////////////////////////////
 // Navigation Functionality
 // /////////////////////////////////
-
-mobileNavOpen.addEventListener('click', function () {
+mobileNavOpenerBtn.addEventListener('click', function () {
+  mainNav.style.display = 'none';
   mobileNav.style.display = 'flex';
 });
 
-mobileNavClose.addEventListener('click', function () {
+mobileNavCloseBtn.addEventListener('click', function () {
+  mainNav.style.display = 'flex';
   mobileNav.style.display = 'none';
-});
-
-contactButtons.forEach((button) => {
-  button.addEventListener('click', function () {
-    mobileNav.style.display = 'none';
-  });
-});
-
-// /////////////////////////////////
-// Slider Functionality
-// /////////////////////////////////
-
-$(document).ready(function () {
-  $('.slider').slick({
-    dots: true,
-    centerMode: true,
-    variableWidth: true,
-    infinite: true,
-    speed: 900,
-    autoplay: true,
-    autoplaySpeed: 2000,
-    loop: true,
-  });
-});
-
-$(document).ready(function () {
-  $('.blog-carousal__slider').slick({
-    dots: true,
-    prevArrow: false,
-    nextArrow: false,
-    infinite: true,
-    speed: 900,
-    autoplay: true,
-    autoplaySpeed: 1000,
-    loop: true,
-  });
-});
-
-// /////////////////////////////////
-// Modal Functionality
-// /////////////////////////////////
-
-const myModal = new HystModal({
-  linkAttributeName: 'data-hystmodal',
-});
-
-// /////////////////////////////////
-// Load More Functionality
-// /////////////////////////////////
-
-loadMoreBtn.addEventListener('click', function () {
-  onLoadBlogs.forEach((blog) => {
-    blog.classList.remove('blog-onload');
-    loadMoreBtn.style.display = 'none';
-  });
 });
