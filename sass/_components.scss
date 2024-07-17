@@ -1,3 +1,7 @@
+// /////////////////////////////////
+// Buttons Related Styles
+// /////////////////////////////////
+
 .btn {
   border: none;
   display: flex;
@@ -38,12 +42,32 @@
     line-height: 1.625;
   }
 
+  &__outline {
+    padding: 0.7rem 2rem;
+    font-weight: 500;
+    font-size: 1.6rem;
+    line-height: 1.625;
+    transition: all 0.2s ease-out;
+    background: transparent;
+    color: var(--color-primary);
+    border: 1.5px solid var(--color-primary);
+    border-radius: 0.2rem;
+
+    &:hover {
+      transform: translateY(-1px);
+    }
+  }
+
   &--primary {
     background: var(--color-primary);
     color: var(--color-white);
     border-radius: 0.2rem;
   }
 }
+
+// /////////////////////////////////
+// Navigation Related Styles
+// /////////////////////////////////
 
 .navigation {
   display: flex;
@@ -114,6 +138,10 @@
   }
 }
 
+// /////////////////////////////////
+// Mobile Nav Related Styles
+// /////////////////////////////////
+
 .mobile-navigation {
   padding: 2rem 0rem 1rem;
   height: 100vh;
@@ -164,22 +192,33 @@
   }
 }
 
+// /////////////////////////////////
+// Buttons Related Styles
+// /////////////////////////////////
+
 .slider {
   &__item {
     width: 85rem !important;
     display: flex;
     flex-direction: column;
+    margin-bottom: 2rem;
+
+    @media only screen and (max-width: $bp-small) {
+      width: 100vw !important;
+    }
   }
 
   &__image {
     height: 40rem;
     width: 100%;
     object-fit: cover;
+    opacity: 60%;
   }
 
   &__content {
     background: var(--color-white);
     padding: 0rem 3rem 3rem;
+    display: none;
   }
 
   &__details {
@@ -216,22 +255,92 @@
   }
 }
 
-.btn__outline {
-  padding: 0.7rem 2rem;
-  font-weight: 500;
-  font-size: 1.6rem;
-  line-height: 1.625;
-  transition: all 0.2s ease-out;
-  background: transparent;
-  color: var(--color-primary);
-  border: 1.5px solid var(--color-primary);
-  border-radius: 0.2rem;
+// /////////////////////////////////
+// Slick Related Styles
+// /////////////////////////////////
 
-  @media only screen and (max-width: $bp-smallest) {
-    display: none;
+.slick {
+  &-slide {
+    margin: 0 1.5rem;
   }
 
-  &:hover {
-    transform: translateY(-1px);
+  &-active {
+    & .slider__image {
+      opacity: 100%;
+    }
+
+    & .slider__content {
+      display: block;
+    }
+
+    & .custom-pagination {
+      background: var(--color-primary);
+    }
   }
+
+  &-prev,
+  &-next {
+    position: absolute;
+    top: 25%;
+    z-index: 4000;
+    background: var(--color-text--dark);
+    width: 4rem;
+    height: 4rem;
+
+    &:hover,
+    &:focus {
+      background: var(--color-text--dark);
+      color: var(--color-white);
+    }
+
+    @media only screen and (max-width: $bp-largest) {
+      display: none !important;
+    }
+  }
+
+  &-prev {
+    left: 9rem;
+    transform: translateX(100%);
+
+    &:before {
+      content: url('/img/icons/prev.svg');
+    }
+  }
+
+  &-next {
+    right: 9rem;
+    transform: translateX(-100%);
+
+    &:before {
+      content: url('/img/icons/next.svg');
+    }
+  }
+
+  &-dots {
+    background: var(--color-white);
+    display: flex;
+    width: auto;
+    padding: 0.4rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    & li {
+      position: relative;
+      display: inline-block;
+      width: 1rem;
+      height: 1rem;
+      padding: 0;
+      cursor: pointer;
+    }
+  }
+}
+
+.custom-pagination {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 100%;
+  background-color: #5742ac4d;
 }

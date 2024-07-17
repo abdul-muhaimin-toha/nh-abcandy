@@ -19,3 +19,21 @@ mobileNavCloseBtn.addEventListener('click', function () {
   mainNav.style.display = 'flex';
   mobileNav.style.display = 'none';
 });
+
+// /////////////////////////////////
+// Slider Functionality
+// /////////////////////////////////
+
+$(document).ready(function () {
+  $('.slider').slick({
+    dots: true,
+    centerMode: true,
+    variableWidth: true,
+    infinite: true,
+    autoplay: true,
+    autoplaySpeed: 1500,
+    customPaging: function () {
+      return '<div class="custom-pagination"></div>';
+    },
+  });
+});
