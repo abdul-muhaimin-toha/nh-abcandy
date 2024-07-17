@@ -1,0 +1,27 @@
+:root {
+  --color-white: #ffffff;
+  --color-primary: #5742ac;
+  --color-text--dark: #2c2347; }
+
+* {
+  margin: 0;
+  padding: 0; }
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit; }
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; }
+  @media only screen and (max-width: 68.75em) {
+    html {
+      font-size: 58%; } }
+
+body {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.6rem;
+  background-color: var(--color-white);
+  font-weight: 400;
+  line-height: 1.625; }
