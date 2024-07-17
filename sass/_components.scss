@@ -344,3 +344,139 @@
   border-radius: 100%;
   background-color: #5742ac4d;
 }
+
+// /////////////////////////////////
+// Blogs Header Related Styles
+// /////////////////////////////////
+
+.blogs {
+  &__functionality {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 4rem;
+
+    @media only screen and (max-width: $bp-small) {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+  }
+
+  &__left {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 4rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      gap: 1.5rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      align-self: stretch;
+    }
+  }
+
+  &__right {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media only screen and (max-width: $bp-small) {
+      align-self: stretch;
+    }
+  }
+
+  &__title {
+    color: var(--color-text--dark);
+    font-size: 4rem;
+    font-weight: 700;
+  }
+
+  &__category {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1.5rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      gap: 1rem;
+    }
+
+    & p {
+      color: var(--color-text--dark);
+      padding: 0.7rem 2rem;
+      background: #2c23471a;
+      border-radius: 4rem;
+
+      @media only screen and (max-width: $bp-medium) {
+        padding: 0.5rem 1.5rem;
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  &__search-box {
+    background: #ffffff80;
+    padding: 0.7rem 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 40px;
+    border: 1px solid var(--color-white);
+    backdrop-filter: blur(20px);
+    gap: 1rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      gap: 0.5rem;
+      padding: 0.7rem 1rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 100%;
+      justify-content: start;
+    }
+  }
+
+  &__button {
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+  }
+
+  &__search-input {
+    border: none;
+    color: #000000a6;
+    font-size: 16px;
+    padding: 0.3rem 3.5rem 0.3rem 0rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      padding: 0.3rem 2.5rem 0.3rem 0rem;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      width: 100%;
+      padding: 0.5rem 3.5rem 0.5rem 0rem;
+    }
+
+    &:focus {
+      border: none;
+      outline: none;
+    }
+  }
+}
+
+// /////////////////////////////////
+// Blog Related Styles
+// /////////////////////////////////
+
+.blog {
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2rem;
+    position: relative;
+  }
+}
