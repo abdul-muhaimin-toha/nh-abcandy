@@ -459,6 +459,40 @@ body {
     color: var(--color-text--light);
     font-weight: 500; }
 
+.blog-video__image {
+  height: 30rem;
+  width: 100%;
+  position: relative; }
+  .blog-video__image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30rem;
+    background: linear-gradient(180deg, rgba(44, 35, 71, 0) 0%, rgba(44, 35, 71, 0.6) 100%); }
+  .blog-video__image img {
+    height: 30rem;
+    width: 100%;
+    object-fit: cover; }
+  .blog-video__image button {
+    position: absolute;
+    right: 2.5rem;
+    bottom: 2.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--color-white);
+    gap: 1rem;
+    cursor: pointer;
+    z-index: 2000; }
+    .blog-video__image button img {
+      width: 2.2rem;
+      height: 2.2rem; }
+
 .blog-video__content {
   margin-top: 0 !important;
   padding: 1.5rem 2rem 2rem; }
