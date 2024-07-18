@@ -46,6 +46,9 @@ body {
 .section-blogs {
   background: var(--color-white); }
 
+.section-footer {
+  background: var(--color-text--dark); }
+
 .btn {
   border: none;
   display: flex;
@@ -548,3 +551,49 @@ body {
 .load-more-container {
   text-align: center;
   margin-top: 4rem; }
+
+.footer {
+  padding: 4.5rem 0 2rem; }
+  @media only screen and (max-width: 37.5em) {
+    .footer {
+      padding: 4.5rem 0; } }
+  .footer__contact h4 {
+    font-weight: 500;
+    color: var(--color-white);
+    margin-bottom: 1.5rem;
+    font-size: 2.4rem; }
+    @media only screen and (max-width: 37.5em) {
+      .footer__contact h4 {
+        text-align: center; } }
+  .footer__social {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 1rem; }
+    @media only screen and (max-width: 37.5em) {
+      .footer__social {
+        justify-content: center; } }
+    .footer__social a {
+      padding: 1rem;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 100%; }
+  .footer__bottom {
+    margin-top: 10.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: var(--color-white);
+    color: #ffffff99;
+    font-size: 14px; }
+    @media only screen and (max-width: 37.5em) {
+      .footer__bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        margin-top: 5rem;
+        text-align: center; } }
+    .footer__bottom a {
+      color: var(--color-white); }
