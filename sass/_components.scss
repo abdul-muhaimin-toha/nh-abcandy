@@ -66,6 +66,10 @@
     display: inline-block;
   }
 
+  &__center {
+    display: inline-block;
+  }
+
   &--primary {
     background: var(--color-primary);
     color: var(--color-white);
@@ -375,6 +379,8 @@
 // /////////////////////////////////
 
 .blogs {
+  margin-bottom: 8rem;
+
   &__functionality {
     display: flex;
     justify-content: space-between;
@@ -682,4 +688,29 @@
       }
     }
   }
+
+  &-simple {
+    grid-column: span 4;
+
+    @media only screen and (max-width: $bp-medium) {
+      grid-column: span 6;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column: span 12;
+    }
+
+    & .blog-carousal__slider {
+      height: 22rem;
+
+      & img {
+        height: 22rem;
+      }
+    }
+  }
+}
+
+.load-more-container {
+  text-align: center;
+  margin-top: 4rem;
 }
