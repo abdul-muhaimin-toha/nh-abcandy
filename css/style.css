@@ -34,7 +34,7 @@ body {
   margin: 0 auto; }
   @media only screen and (max-width: 80em) {
     .container {
-      padding: 0 1rem; } }
+      padding: 0 0.5rem; } }
 
 .section-header {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); }
@@ -42,9 +42,6 @@ body {
 .section-slider {
   background: #d1efff;
   padding-bottom: 8rem; }
-
-.section-blogs {
-  background: var(--color-white); }
 
 .section-footer {
   background: var(--color-text--dark); }
@@ -95,7 +92,10 @@ body {
     color: var(--color-text--dark);
     font-size: 1.6rem;
     font-weight: 500;
-    display: inline-block; }
+    display: inline-block;
+    transition: all 0.2s ease-out; }
+    .btn__banner:hover {
+      transform: translateY(-1px); }
   .btn__center {
     display: inline-block; }
   .btn--primary {
@@ -154,10 +154,16 @@ body {
     max-width: 14.2rem; }
 
 .mobile-navigation {
-  padding: 2rem 0rem 1rem;
-  height: 100vh;
+  padding: 2rem 0.5rem 1rem;
   display: none;
-  flex-direction: column; }
+  flex-direction: column;
+  z-index: 6000;
+  background: var(--color-white);
+  min-height: 100vh;
+  width: 100vw;
+  position: fixed;
+  top: 0;
+  left: 0; }
   .mobile-navigation__top {
     display: flex;
     justify-content: space-between;
@@ -405,8 +411,7 @@ body {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   row-gap: 4rem;
-  column-gap: 3rem;
-  position: relative; }
+  column-gap: 3rem; }
 
 .blog-carousal {
   width: 100%;
@@ -416,7 +421,8 @@ body {
     .blog-carousal {
       grid-column: span 12; } }
   .blog-carousal__slider {
-    height: 30rem; }
+    height: 30rem;
+    width: 100%; }
     .blog-carousal__slider img {
       height: 30rem;
       object-fit: cover; }
@@ -481,11 +487,12 @@ body {
     color: var(--color-white); }
     @media only screen and (max-width: 56.25em) {
       .blog-banner__content {
-        padding: 5rem; } }
+        padding: 3rem; } }
     .blog-banner__content h4 {
       font-size: 3.6rem;
       font-weight: 500;
-      margin-bottom: 1rem; }
+      margin-bottom: 1rem;
+      line-height: 1.4; }
     .blog-banner__content p {
       color: #ffffffcc;
       font-size: 1.6rem;
@@ -533,7 +540,8 @@ body {
       color: var(--color-text--dark);
       margin-bottom: 1.5rem;
       text-transform: uppercase;
-      font-weight: 700; }
+      font-weight: 700;
+      line-height: 1.4; }
 
 .blog-simple {
   grid-column: span 4; }

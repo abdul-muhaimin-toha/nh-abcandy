@@ -3,7 +3,7 @@
   margin: 0 auto;
 
   @media only screen and (max-width: $bp-largest) {
-    padding: 0 1rem;
+    padding: 0 0.5rem;
   }
 }
 
@@ -17,7 +17,6 @@
 }
 
 .section-blogs {
-  background: var(--color-white);
 }
 
 .section-footer {
