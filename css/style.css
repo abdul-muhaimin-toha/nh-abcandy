@@ -19,7 +19,7 @@ html {
   font-size: 62.5%; }
   @media only screen and (max-width: 68.75em) {
     html {
-      font-size: 58%; } }
+      font-size: 55%; } }
 
 body {
   font-family: 'DM Sans', sans-serif;
@@ -34,14 +34,19 @@ body {
   margin: 0 auto; }
   @media only screen and (max-width: 80em) {
     .container {
-      padding: 0 0.5rem; } }
+      padding: 0 1rem; } }
 
 .section-header {
   box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1); }
 
 .section-slider {
-  background: #d1efff;
-  padding-bottom: 8rem; }
+  background: #000;
+  clip-path: polygon(100% 0%, 100% 0%, 100% 35%, 100% 92%, 75% 95%, 51% 98%, 25% 95%, 0% 92%, 0% 35%, 0% 0%);
+  padding-bottom: 40rem;
+  background: radial-gradient(74% 30.63% at 79.35% 21.98%, #d1efff 0%, rgba(209, 239, 255, 0.267) 100%); }
+
+.section-blogs {
+  margin-top: -30rem; }
 
 .section-footer {
   background: var(--color-text--dark); }
@@ -395,7 +400,8 @@ body {
     border: none;
     color: #000000a6;
     font-size: 16px;
-    padding: 0.3rem 3.5rem 0.3rem 0rem; }
+    padding: 0.3rem 3.5rem 0.3rem 0rem;
+    background: transparent; }
     @media only screen and (max-width: 56.25em) {
       .blogs__search-input {
         padding: 0.3rem 2.5rem 0.3rem 0rem; } }
