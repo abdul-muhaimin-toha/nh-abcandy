@@ -28,6 +28,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="css/hystmodal.min.css" />
     <link rel="stylesheet" href="css/style.css" />
     <link rel="shortcut icon" type="image/png" href="img/fav.png" />
 
@@ -70,7 +71,12 @@
                 <a href="#" class="navigation__link">Blog</a>
               </li>
             </ul>
-            <button class="btn btn__contact btn--primary">Contact Us</button>
+            <button
+              class="btn btn__contact btn--primary contact-us-btn"
+              data-hystmodal="#myModal"
+            >
+              Contact Us
+            </button>
             <button
               class="btn btn__hamburger btn--primary"
               id="mobile-nav-opener-btn"
@@ -119,7 +125,10 @@
             </ul>
           </div>
           <div class="mobile-navigation__bottom">
-            <button class="btn btn__mobile-contact btn--primary">
+            <button
+              class="btn btn__mobile-contact btn--primary contact-us-btn"
+              data-hystmodal="#myModal"
+            >
               Contact Us
             </button>
           </div>
@@ -293,7 +302,7 @@
               <div class="blog-carousal">
                 <div class="blog-video__image">
                   <img src="img/blogs/blog-11.jpg" alt="Blog image" />
-                  <button>
+                  <button data-hystmodal="#video-modal">
                     Watch Now <img src="img/icons/play.svg" alt="Play Now" />
                   </button>
                 </div>
@@ -306,7 +315,12 @@
                     Lorem ipsum dolor sit amet consectetur bibendum nunc in amet
                     auctor enim massa
                   </h2>
-                  <button class="btn btn__outline">Watch Now</button>
+                  <button
+                    class="btn btn__outline"
+                    data-hystmodal="#video-modal"
+                  >
+                    Watch Now
+                  </button>
                 </div>
               </div>
               <!-- ************************** -->
@@ -320,7 +334,12 @@
                     consectetur cras in nulla. Non suspendisse at ac enim.
                     Facilisi nulla tortor nec mollis faucibus odio sodales.
                   </p>
-                  <button class="btn btn__banner">Let’s Talk</button>
+                  <button
+                    class="btn btn__banner contact-us-btn"
+                    data-hystmodal="#myModal"
+                  >
+                    Let’s Talk
+                  </button>
                 </div>
               </div>
               <!-- ************************** -->
@@ -353,7 +372,10 @@
               <div class="blog-long">
                 <div class="blog-long__content">
                   <h4>Do you need any creative service for your business?</h4>
-                  <button class="btn btn__outline btn--primary">
+                  <button
+                    class="btn btn__outline btn--primary contact-us-btn"
+                    data-hystmodal="#myModal"
+                  >
                     Let's Talk
                   </button>
                 </div>
@@ -428,6 +450,9 @@
         </div>
       </section>
     </main>
+    <!-- ************************** -->
+    <!-- Section Footer -->
+    <!-- ************************** -->
     <footer class="section-footer">
       <div class="container">
         <div class="footer">
@@ -456,6 +481,113 @@
       </div>
     </footer>
     <!-- ************************** -->
+    <!-- All Modals -->
+    <!-- ************************** -->
+
+    <div class="hystmodal" id="video-modal" aria-hidden="true">
+      <div class="hystmodal__wrap">
+        <div class="hystmodal__window" role="dialog" aria-modal="true">
+          <!-- You modal HTML markup -->
+          <section class="contact">
+            <div class="contact__heading">
+              <h3 class="contact__title">Contact Us</h3>
+              <button
+                data-hystclose
+                class="btn btn__sidebar btn__modal-close"
+                id="mobile-nav-close"
+              >
+                <img
+                  src="img/icons/icon-sidebar-close.svg"
+                  alt="Sidebar opener"
+                />
+              </button>
+            </div>
+            <iframe
+              width="100%"
+              height="315"
+              src="https://www.youtube.com/embed/KKNCiRWd_j0?si=Weqp8SB-LB4kBZee"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowfullscreen
+            ></iframe>
+          </section>
+        </div>
+      </div>
+    </div>
+    <div class="hystmodal" id="myModal" aria-hidden="true">
+      <div class="hystmodal__wrap">
+        <div class="hystmodal__window" role="dialog" aria-modal="true">
+          <!-- You modal HTML markup -->
+          <section class="contact">
+            <div class="contact__heading">
+              <h3 class="contact__title">Contact Us</h3>
+              <button
+                data-hystclose
+                class="btn btn__sidebar btn__modal-close"
+                id="mobile-nav-close"
+              >
+                <img
+                  src="img/icons/icon-sidebar-close.svg"
+                  alt="Sidebar opener"
+                />
+              </button>
+            </div>
+            <form class="contact__form">
+              <div class="contact__input">
+                <label for="name" class="contact__label">Your Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  class="contact__feild"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="contact__input">
+                <label for="email" class="contact__label">Your Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  class="contact__feild"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="contact__input contact__full">
+                <label for="subject" class="contact__label"
+                  >Select Subject</label
+                >
+                <select name="subject" id="subject" class="contact__feild">
+                  <option value="application-development">
+                    Select subject
+                  </option>
+                  <option value="application-development">
+                    Application Development
+                  </option>
+                  <option value="digital-marketing">Digital Marketing</option>
+                  <option value="content-writing">Content Writing</option>
+                </select>
+              </div>
+              <div class="contact__input contact__full">
+                <label for="message" class="contact__label">Your Message</label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="4"
+                  class="contact__feild"
+                ></textarea>
+              </div>
+              <div class="contact__input contact__full">
+                <button class="btn btn__contact btn--primary" data-hystclose>
+                  Send Message
+                </button>
+              </div>
+            </form>
+          </section>
+        </div>
+      </div>
+    </div>
+    <!-- ************************** -->
     <!-- All Scripts -->
     <!-- ************************** -->
     <script
@@ -476,6 +608,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="js/hystmodal.min.js"></script>
     <script src="js/script.js"></script>
   </body>
 </html>

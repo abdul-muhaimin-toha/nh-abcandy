@@ -8,6 +8,7 @@ const mainNav = document.querySelector('.navigation');
 const mobileNav = document.querySelector('.mobile-navigation');
 const loadMoreBtn = document.querySelector('#load-more');
 const blogContainer = document.querySelector('.blog__container');
+const contactBtns = document.querySelectorAll('.contact-us-btn');
 
 // /////////////////////////////////
 // Navigation Functionality
@@ -20,6 +21,13 @@ mobileNavOpenerBtn.addEventListener('click', function () {
 mobileNavCloseBtn.addEventListener('click', function () {
   mainNav.style.display = 'flex';
   mobileNav.style.display = 'none';
+});
+
+contactBtns.forEach((button) => {
+  button.addEventListener('click', function () {
+    mobileNav.style.display = 'none';
+    mainNav.style.display = 'flex';
+  });
 });
 
 // /////////////////////////////////
@@ -54,6 +62,10 @@ $(document).ready(function () {
   });
 });
 
+// /////////////////////////////////
+// Load More Functionality
+// /////////////////////////////////
+
 loadMoreBtn.addEventListener('click', function () {
   const newBlogCard = `
     <div class="blog-carousal blog-simple">
@@ -82,4 +94,12 @@ loadMoreBtn.addEventListener('click', function () {
     blogContainer.insertAdjacentHTML('beforeend', newBlogCard);
     loadMoreBtn.style.display = 'none';
   }
+});
+
+// /////////////////////////////////
+// Modal Functionality
+// /////////////////////////////////
+
+const myModal = new HystModal({
+  linkAttributeName: 'data-hystmodal',
 });

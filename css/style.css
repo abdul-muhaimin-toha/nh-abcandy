@@ -103,6 +103,8 @@ body {
       transform: translateY(-1px); }
   .btn__center {
     display: inline-block; }
+  .btn__modal-close {
+    background: transparent; }
   .btn--primary {
     background: var(--color-primary);
     color: var(--color-white);
@@ -204,6 +206,9 @@ body {
   display: flex;
   flex-direction: column;
   margin-bottom: 2rem; }
+  @media only screen and (max-width: 56.25em) {
+    .slider__item {
+      width: 80vw !important; } }
   @media only screen and (max-width: 37.5em) {
     .slider__item {
       width: 100vw !important; } }
@@ -646,3 +651,67 @@ body {
         text-align: center; } }
     .footer__bottom a {
       color: var(--color-white); }
+
+.contact {
+  background: rgba(214, 214, 214, 0.7);
+  backdrop-filter: blur(20px); }
+  .contact__heading {
+    background: var(--color-text--dark);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; }
+  .contact__title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 34px; }
+  .contact__form {
+    padding: 2.5rem 3rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; }
+    @media only screen and (max-width: 37.5em) {
+      .contact__form {
+        grid-template-columns: 0; } }
+  .contact iframe {
+    display: block; }
+  .contact__input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem; }
+    @media only screen and (max-width: 37.5em) {
+      .contact__input {
+        grid-column-end: span 2; } }
+  .contact__label {
+    color: var(--color-text--dark);
+    font-size: 1.4rem;
+    font-weight: 500; }
+  .contact__feild {
+    padding: 1.2rem 1rem;
+    background: var(--color-white);
+    font-size: 1.6rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+    outline: none;
+    border: none; }
+  .contact__full {
+    grid-column-end: span 2;
+    display: flex;
+    justify-content: end; }
+    .contact__full .btn {
+      color: var(--color-white);
+      font-size: 16px;
+      font-weight: 500;
+      align-self: self-end; }
+    @media only screen and (max-width: 37.5em) {
+      .contact__full {
+        grid-column-end: span 2; } }
+
+.hystmodal {
+  z-index: 7000; }
+  .hystmodal__wrap {
+    background: #2c2347a4; }
+    @media only screen and (min-width: 56.25em) {
+      .hystmodal__wrap {
+        backdrop-filter: blur(10px); } }

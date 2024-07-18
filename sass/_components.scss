@@ -75,6 +75,10 @@
     display: inline-block;
   }
 
+  &__modal-close {
+    background: transparent;
+  }
+
   &--primary {
     background: var(--color-primary);
     color: var(--color-white);
@@ -216,7 +220,7 @@
 }
 
 // /////////////////////////////////
-// Buttons Related Styles
+// Slider Related Styles
 // /////////////////////////////////
 
 .slider {
@@ -225,6 +229,10 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 2rem;
+
+    @media only screen and (max-width: $bp-medium) {
+      width: 80vw !important;
+    }
 
     @media only screen and (max-width: $bp-small) {
       width: 100vw !important;
@@ -841,6 +849,99 @@
 
     & a {
       color: var(--color-white);
+    }
+  }
+}
+
+// ////////////////////////////////
+// Modal related Styles
+// ////////////////////////////////
+
+.contact {
+  background: rgba(214, 214, 214, 0.7);
+  backdrop-filter: blur(20px);
+
+  &__heading {
+    background: var(--color-text--dark);
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__title {
+    font-size: 2.3rem;
+    font-weight: 700;
+    color: var(--color-white);
+    line-height: 34px;
+  }
+
+  &__form {
+    padding: 2.5rem 3rem 3rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+
+    @media only screen and (max-width: $bp-small) {
+      grid-template-columns: 0;
+    }
+  }
+
+  & iframe {
+    display: block;
+  }
+
+  &__input {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    @media only screen and (max-width: $bp-small) {
+      grid-column-end: span 2;
+    }
+  }
+
+  &__label {
+    color: var(--color-text--dark);
+    font-size: 1.4rem;
+    font-weight: 500;
+  }
+
+  &__feild {
+    padding: 1.2rem 1rem;
+    background: var(--color-white);
+    font-size: 1.6rem;
+    font-size: 1.7rem;
+    font-weight: 400;
+    outline: none;
+    border: none;
+  }
+
+  &__full {
+    grid-column-end: span 2;
+    display: flex;
+    justify-content: end;
+
+    & .btn {
+      color: var(--color-white);
+      font-size: 16px;
+      font-weight: 500;
+      align-self: self-end;
+    }
+
+    @media only screen and (max-width: $bp-small) {
+      grid-column-end: span 2;
+    }
+  }
+}
+
+.hystmodal {
+  z-index: 7000;
+
+  &__wrap {
+    background: #2c2347a4;
+
+    @media only screen and (min-width: $bp-medium) {
+      backdrop-filter: blur(10px);
     }
   }
 }
